@@ -4,6 +4,8 @@
 
     padding-left: 0;
     padding-right: 0;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
   }
   .slider {
     overflow-x: scroll;
@@ -17,10 +19,11 @@
 
   .slider_inner {
     min-width: calc(9.2rem * 6 + 1rem * 5);
-    padding-bottom: 3.6rem;
+    max-width: 60rem;
+    padding-bottom: 2.4rem;
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-between;
+    margin: 0 auto;
   }
 
   .devices {
@@ -316,6 +319,7 @@
       flex-direction: row;
       gap: 2%;
       padding-bottom: 5rem;
+      padding-top: 4.9rem;
     }
     .slider {
       overflow-x: visible;
@@ -330,6 +334,7 @@
 
     .slider_inner {
       min-width: 100%;
+      max-width: none;
       padding-bottom: 0;
       display: flex;
       flex-wrap: wrap;
