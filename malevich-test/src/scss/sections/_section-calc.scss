@@ -18,8 +18,8 @@
   }
 
   .slider_inner {
-    min-width: calc(9.2rem * 6 + 1rem * 5);
-    max-width: 61.8rem;
+    min-width: calc(10.2rem * 6 + 1rem * 5);
+    max-width: 66rem;
     padding-right: 1.8rem;
     padding-bottom: 2.4rem;
     display: flex;
@@ -29,7 +29,7 @@
 
   .devices {
     &__item {
-      width: 9.2rem;
+      width: 10.2rem;
       max-height: 10.6rem;
       border-radius: 1.2rem;
       background: var(--gray-day-50, #f3f5f6);
