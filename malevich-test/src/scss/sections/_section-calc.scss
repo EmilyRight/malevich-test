@@ -19,7 +19,8 @@
 
   .slider_inner {
     min-width: calc(9.2rem * 6 + 1rem * 5);
-    max-width: 60rem;
+    max-width: 61.8rem;
+    padding-right: 1.8rem;
     padding-bottom: 2.4rem;
     display: flex;
     justify-content: space-between;
@@ -335,7 +336,7 @@
     .slider_inner {
       min-width: 100%;
       max-width: none;
-      padding-bottom: 0;
+      padding: 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
