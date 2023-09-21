@@ -17,14 +17,13 @@ class Calculator {
     [this.activeDevice] = devicesData;
     this.inputView = new RangeView(this.activeDevice);
     this.activeItem = [...this.devices].find((device) => this.activeDevice.id === +device.id);
-    this.currentDiscount = this.activeDevice.averageDiscount;
+    this.currentDiscount = this.activeDevice.maxDiscount;
     this.basePrice = this.activeDevice.basePrice;
     this.currentPrice = this.basePrice - this.currentDiscount;
     this.render();
     this.setActiveListItem();
     this.showDevicePrices();
     this.setLinkHref();
-    // this.handleInputbar();
     this.setContext();
   }
 
@@ -84,7 +83,7 @@ class Calculator {
     this.activeDevice = devicesData.find((device) => device.id === Number(item.id));
     this.setActiveListItem();
     this.inputView = new RangeView(this.activeDevice);
-    this.currentDiscount = this.activeDevice.averageDiscount;
+    this.currentDiscount = this.activeDevice.maxDiscount;
     this.render();
     this.addEventListeners();
   }

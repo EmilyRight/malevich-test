@@ -10,7 +10,7 @@ class RangeView {
     this.device = deviceObject;
     this.inputs = null;
     this.inputsBar = this.createInputBarBackground();
-    this.currentDiscount = this.device.averageDiscount;
+    this.currentDiscount = this.device.maxDiscount;
     this.renderInputLine();
     this.inputsBg = '';
   }
@@ -78,7 +78,7 @@ class RangeView {
             id="${discount}"
             class="input-line__input
             ${discount <= this.currentDiscount ? 'in-range' : ''}"
-            ${discount === this.device.averageDiscount ? 'checked=true' : ''}
+            ${discount === this.device.maxDiscount ? 'checked=true' : ''}
           >
           <label for="${discount}"
             class="input-line__label device-context-element js-gtm-event"
