@@ -1,0 +1,248 @@
+.section-mixx {
+  .section-layer {
+    flex-direction: column;
+    padding-top: 1.8rem;
+    padding-bottom: 0;
+  }
+  .mixx {
+    &__title {
+      font-family: $font1;
+      line-height: 4.6rem;
+      text-align: center;
+    }
+
+    &__cards-list {
+      font-family: $font1;
+    }
+  }
+
+  .mixx-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    &__item {
+      padding: 2.7rem 1.8rem;
+      overflow: hidden;
+    }
+  }
+  .mixx-card {
+    border-radius: 1.8rem;
+    position: relative;
+    min-height: 27.3rem;
+    &_1 {
+      background: var(--blue-primary, #3fcbff);
+    }
+
+    &_2 {
+      background: var(--gray-day-50, #f3f5f6);
+    }
+  }
+  .box-content {
+    max-width: 100%;
+    position: relative;
+    z-index: 10;
+    min-height: 22rem;
+
+    display: flex;
+    flex-direction: column;
+    &__title {
+      text-align: left;
+      margin-bottom: 1.3rem;
+    }
+
+    &__text {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 2rem;
+      line-height: 2.8rem;
+      height: 100%;
+      flex-grow: 1;
+      p {
+        flex-basis: 100%;
+      }
+    }
+  }
+  .wow {
+  }
+  .fadeIn {
+  }
+  .btn {
+    min-width: auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 3.7rem;
+    height: 3.7rem;
+    margin: 0;
+    padding: 0;
+    span {
+      display: none;
+    }
+  }
+
+  .mixx-card_1 {
+    .box-pic {
+      &::before {
+        position: absolute;
+        content: '';
+        width: 15rem;
+        height: 15rem;
+        background-color: #fff;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        will-change: filter;
+        -webkit-filter: blur(60px);
+        filter: blur(60px);
+      }
+    }
+  }
+  .box-pic {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    pointer-events: none;
+    width: 50%;
+  }
+  .pic-layer {
+    position: absolute;
+    &_mixx1 {
+      bottom: -7.5rem;
+      right: 0.2rem;
+      transform: rotate(5deg);
+      img {
+        max-width: 23rem;
+      }
+    }
+    &_coin1 {
+      top: -8rem;
+      left: -9rem;
+      img {
+        width: 6rem;
+      }
+    }
+
+    &_percent {
+      bottom: -4rem;
+      right: 1rem;
+      img {
+        width: 20rem;
+      }
+    }
+
+    &_coin2 {
+      bottom: 15rem;
+      right: 0.2rem;
+      transform: rotate(-90deg);
+      will-change: filter;
+      -webkit-filter: blur(2px);
+      filter: blur(2px);
+      img {
+        width: 7rem;
+      }
+    }
+  }
+  .picture {
+  }
+
+  @media (min-width: 600px) {
+    .section-layer {
+    }
+    .mixx {
+      &__title {
+        margin-bottom: 5.3rem;
+      }
+
+      &__cards-list {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .mixx-cards {
+      &__item {
+        padding: 4.6rem 4.1rem 2.9rem 4.1rem;
+        width: 48%;
+      }
+    }
+
+    .box-content {
+      min-height: 100%;
+      &__title {
+        margin-bottom: 1.6rem;
+      }
+
+      &__text {
+        p {
+          max-width: 70%;
+        }
+      }
+    }
+
+    .btn {
+      min-width: auto;
+      border-radius: 3rem;
+      max-width: fit-content;
+      height: auto;
+      @include btn;
+      span {
+        display: inline-block;
+        text-align: center;
+        font-family: $font1b;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        font-weight: bold;
+        letter-spacing: 0rem;
+      }
+      svg {
+        display: none;
+      }
+    }
+    .box-pic {
+      height: 100%;
+    }
+
+
+    .pic-layer {
+      display: flex;
+      align-items: center;
+      &_mixx1 {
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0rem;
+        transform: rotate(5deg);
+        img {
+          width: 17.5vw;
+          max-width: 25rem;
+        }
+      }
+      &_coin1 {
+        top: auto;
+        bottom: 0;
+        left: 3rem;
+        img {
+          width: 6rem;
+        }
+      }
+
+      &_percent {
+        bottom: -6.5rem;
+        right: -3rem;
+        img {
+          width: 27rem;
+        }
+      }
+
+      &_coin2 {
+        bottom: auto;
+        top: 1.5rem;
+        right: 4.5rem;
+        transform: rotate(-80deg);
+      }
+    }
+  }
+}

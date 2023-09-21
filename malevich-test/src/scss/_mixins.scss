@@ -1,0 +1,27 @@
+@mixin text-main {
+  font-family: $font1;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  @media (min-width: 600px) {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+  }
+}
+
+@mixin btn {
+  display: block;
+  padding: 1.8rem 4.5rem;
+  text-align: center;
+  font-family: $font1b;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 3rem;
+  // border: 0.2rem solid $color-dark;
+  color: #fff;
+  background-color: $color-dark;
+  transition: 0.3s;
+}

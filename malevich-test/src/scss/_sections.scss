@@ -1,0 +1,21 @@
+////// Both sections ///////
+.section-layer {
+  @extend .container;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8rem;
+  padding-top: 7rem;
+  @media (max-width: 600px) {
+    padding: 3.6rem 1.8rem;
+  }
+}
+
+@import "sections/teaser";
+@import "sections/section-about";
+@import "sections/section-calc";
+@import "sections/section-mixx";
+@import "sections/section-faq";
+@import "sections/section-app";
+@import "sections/footer";
