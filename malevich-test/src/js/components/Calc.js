@@ -20,11 +20,7 @@ class Calculator {
     this.currentDiscount = this.activeDevice.maxDiscount;
     this.basePrice = this.activeDevice.basePrice;
     this.currentPrice = this.basePrice - this.currentDiscount;
-    this.render();
-    this.setActiveListItem();
-    this.showDevicePrices();
-    this.setLinkHref();
-    this.setContext();
+    this.showActiveDevice(this.activeDevice);
   }
 
   render() {
@@ -93,7 +89,6 @@ class Calculator {
       this.currentDiscount = discount;
       this.inputView.setCurrentDiscount(this.currentDiscount);
       this.inputView.handleColorOnInputBar();
-      this.showDevicePrices();
     }
   }
 
@@ -107,15 +102,15 @@ class Calculator {
     this.activeDeviceLink.innerHTML = type === 'smartphone'
       ? smartphoneLinkText
       : deviceLinkText;
-    this.setLinkHref();
-    this.showDevicePrices();
   }
 
   showActiveDevice(device) {
     this.setActiveDevice(device);
     this.render();
-    this.setContext();
     this.showDeviceInfo();
+    this.setLinkHref();
+    this.showDevicePrices();
+    this.setContext();
   }
 
   listenToActiveDeviceChange() {
@@ -129,9 +124,9 @@ class Calculator {
 
   listenToDiscountChoice() {
     this.labels.forEach((input) => {
-      console.log('labels', input);
       input.addEventListener('click', (event) => {
         this.handleDiscountChoice(event);
+        this.showDevicePrices();
       });
     });
   }
