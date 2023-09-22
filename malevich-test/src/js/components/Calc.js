@@ -36,6 +36,7 @@ class Calculator {
     this.inputView.setInputBar(inputBg);
     this.inputView.addLineGradient();
     this.inputView.inputs = this.inputs;
+    this.listenToDiscountChoice();
   }
 
   removeActiveDevice(device) {
@@ -84,8 +85,6 @@ class Calculator {
     this.setActiveListItem();
     this.inputView = new RangeView(this.activeDevice);
     this.currentDiscount = this.activeDevice.maxDiscount;
-    this.render();
-    this.addEventListeners();
   }
 
   handleDiscountChoice(event) {
@@ -112,20 +111,34 @@ class Calculator {
     this.showDevicePrices();
   }
 
-  addEventListeners() {
-    this.devices.forEach((device) => {
-      device.addEventListener('click', () => {
-        this.setActiveDevice(device);
-        this.setContext();
-        this.showDeviceInfo();
-      });
-    });
+  showActiveDevice(device) {
+    this.setActiveDevice(device);
+    this.render();
+    this.setContext();
+    this.showDeviceInfo();
+  }
 
+  listenToActiveDeviceChange() {
+    this.devices.forEach((device) => {
+      device.addEventListener(
+        'click',
+        this.showActiveDevice.bind(this, device),
+      );
+    });
+  }
+
+  listenToDiscountChoice() {
     this.labels.forEach((input) => {
+      console.log('labels', input);
       input.addEventListener('click', (event) => {
         this.handleDiscountChoice(event);
       });
     });
+  }
+
+  addEventListeners() {
+    this.listenToActiveDeviceChange();
+    this.listenToDiscountChoice();
   }
 }
 
