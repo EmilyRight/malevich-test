@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import { WOW } from './vendor/wow.min';
 import detectDevice from './components/detectDevice';
 
@@ -8,10 +7,11 @@ import videoTeaser from './components/videoTeaser';
 
 const GTM = new GTMEvents();
 const calculator = new Calculator();
-window.jQuery = window.$ = $;
+
 /// /////// DocReady //////////
 window.addEventListener('load', () => {
   detectDevice();
+  getCurrentYear();
   videoTeaser();
   new WOW().init();
   calculator.addEventListeners();
@@ -80,5 +80,12 @@ function handleFaqOpening() {
         item.classList.add(activeClassName);
       }
     });
+  });
+}
+
+function getCurrentYear() {
+  const yearSpan = document.querySelectorAll('.current-year');
+  yearSpan.forEach((span) => {
+    span.innerHTML = new Date().getFullYear().toString();
   });
 }
