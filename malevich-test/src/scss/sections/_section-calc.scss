@@ -18,7 +18,7 @@
   }
 
   .slider_inner {
-    min-width: calc(10.2rem * 6 + 1rem * 5);
+    min-width: calc(10.2rem * 5 + 1rem * 4);
     max-width: 66rem;
     padding-right: 1.8rem;
     padding-bottom: 2.4rem;
@@ -52,6 +52,9 @@
         background: var(--blue-primary, #3fcbff);
         color: #fff;
         align-items: flex-start;
+        .devices-item__image {
+          display: none;
+        }
         .devices-item__link {
           height: 100%;
           width: 100%;
@@ -99,9 +102,9 @@
       }
     }
   }
+
   .calc-grid {
     display: grid;
-    // grid-template-rows: 40% 16% 26% auto;
     grid-template-rows: 21rem 8rem 13rem 5rem;
     grid-template-columns: 47% 53%;
     font-family: $font1;
@@ -185,6 +188,7 @@
       grid-column: 1/3;
       grid-row: 4/4;
       text-align: center;
+      font-weight: 700;
     }
     &__label_desktop {
       display: none;
@@ -285,7 +289,6 @@
   .price {
     &__info {
       display: flex;
-      gap: 2rem;
       align-items: center;
       margin-bottom: 1.8rem;
     }
@@ -311,6 +314,9 @@
       font-style: normal;
       font-weight: 400;
       line-height: 1;
+    }
+    &__button {
+      letter-spacing: normal;
     }
   }
   //--------------------------------------------------------------------desktop--------------------------
@@ -354,14 +360,67 @@
 
         &_last {
           justify-content: center;
+          flex-direction: row;
+          flex-basis: 100%;
+          max-width: none;
+
+          .devices-item__image {
+            display: block;
+            position: relative;
+            min-height: 100%;
+            flex-basis: 100%;
+            &::before {
+              position: absolute;
+              content: "";
+              width: 19rem;
+              height: 19rem;
+              background-color: #fff;
+              border-radius: 50%;
+              left: 50%;
+              top: 50%;
+              transform: translate(-60%, -50%);
+              will-change: filter;
+              filter: blur(50px);
+            }
+          }
+
+          .pic-layer {
+            position: absolute;
+
+            img {
+              height: auto;
+              max-width: 50%;
+            }
+          }
+
+          .pic-layer__phone {
+            left: 5%;
+            bottom: 0rem;
+            img {
+              max-width: 50%;
+            }
+          }
+
+          .pic-layer__caps {
+            left: 33%;
+            bottom: 4.5rem;
+
+            img {
+              max-width: 69%;
+            }
+          }
+
           .devices-item__name {
             text-align: left;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
           }
           .devices-item__link {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
+            max-width: 30%;
+            margin-top: -1rem;
           }
           .devices-item__icon {
             width: 3.9rem;

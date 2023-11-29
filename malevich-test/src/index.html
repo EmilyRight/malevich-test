@@ -128,6 +128,21 @@
     <meta name="theme-color" content="#1f2229" />
   </head>
   <body>
+    <script>
+      if (!window.UXS) {
+        document.addEventListener(
+          "uxsReady",
+          (function (w, d, u, h, s) {
+            w._uxsSettings = { id: "dh3dwaaemictfia9vrovuafq" };
+            h = d.getElementsByTagName("head")[0];
+            s = d.createElement("script");
+            s.async = 1;
+            s.src = u;
+            h.appendChild(s);
+          })(window, document, "https://cdn.uxfeedback.ru/widget.js")
+        );
+      }
+    </script>
     <div class="svgs">
       <svg xmlns="http://www.w3.org/2000/svg">
         <g id="page-logo">
@@ -215,7 +230,7 @@
               </p>
               <button
                 class="teaser-more js-go-next js-gtm-event"
-                data-event="button_more"
+                data-event="more"
                 data-section="teaser"
               >
                 <span>Подробнее</span>
@@ -287,16 +302,6 @@
               <li
                 class="devices__item devices-item device"
                 data-discount="1000"
-                id="4"
-              >
-                <div class="devices-item__image">
-                  <img src="./img/page/camera.png" alt="" />
-                </div>
-                <div class="devices-item__name">Камера Ростелеком</div>
-              </li>
-              <li
-                class="devices__item devices-item device"
-                data-discount="1000"
                 id="2"
               >
                 <div class="devices-item__image">
@@ -317,20 +322,28 @@
                 <div class="devices-item__name">TV-приставка Wink+</div>
               </li>
 
-              <li class="devices__item devices-item devices__item_last">
-                <a
-                  href="https://tele2.ru/shop/devices/smartphones"
-                  class="devices-item__link"
-                  target="_blank"
-                >
+              <a
+                class="devices__item devices-item devices__item_last"
+                href="https://tele2.ru/shop/devices/smartphones"
+                target="_blank"
+              >
+                <div class="devices-item__image box-pic">
+                  <div class="pic-layer pic-layer__phone">
+                    <img src="./img/page/Phone-last.png" alt="" />
+                  </div>
+                  <div class="pic-layer pic-layer__caps">
+                    <img src="./img/page/caps-last.png" alt="" />
+                  </div>
+                </div>
+                <div class="devices-item__link">
                   <div class="devices-item__name">Ко&nbsp;всем устройствам</div>
                   <div class="devices-item__icon">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                       <use xlink:href="#arrow-right-link"></use>
                     </svg>
                   </div>
-                </a>
-              </li>
+                </div>
+              </a>
             </ul>
           </div>
           <div class="calc__content calc-grid">
@@ -339,127 +352,7 @@
                 Сколько минут обменяем на&nbsp;скидку?
               </h3>
               <div class="calc-grid__input">
-                <!-- <div class="calc-grid__bg spots-line"></div> -->
-                <div class="calc-grid__line input-line">
-                  <!-- <div class="input-line__item">
-                    <div class="input-line__range">min</div>
-                    <input
-                      type="radio"
-                      name="minutes"
-                      id="500"
-                      class="input-line__input"
-                    />
-                    <label
-                      for="500"
-                      class="input-line__label device-context-elemenk js-gtm-event"
-                      data-event="switcher"
-                      >500</label
-                    >
-                  </div>
-                  <div class="input-line__item">
-                    <input
-                      type="radio"
-                      name="minutes"
-                      id="750"
-                      class="input-line__input in-range"
-                    />
-                    <label
-                      for="750"
-                      class="input-line__label device-context-element js-gtm-event"
-                      data-event="switcher"
-                      >750</label
-                    >
-                  </div>
-                  <div class="input-line__item">
-                    <div
-                      class="input-line__range input-line__range_max"
-                      data-maxdiscount="1000"
-                    >
-                      max
-                    </div>
-                    <input
-                      type="radio"
-                      name="minutes"
-                      id="1000"
-                      class="input-line__input"
-                    />
-                    <label
-                      for="1000"
-                      class="input-line__label device-context-element js-gtm-event"
-                      data-event="switcher"
-                      >1000</label
-                    >
-                  </div>
-                  <div class="input-line__item">
-                    <input
-                      type="radio"
-                      name="minutes"
-                      id="1500"
-                      class="input-line__input"
-                    />
-                    <label
-                      for="1500"
-                      class="input-line__label device-context-element js-gtm-event"
-                      data-event="switcher"
-                      >1500</label
-                    >
-                  </div>
-                  <div class="input-line__item">
-                    <div
-                      class="input-line__range input-line__range_max"
-                      data-maxdiscount="2000"
-                    >
-                      max
-                    </div>
-                    <input
-                      type="radio"
-                      name="minutes"
-                      id="2000"
-                      class="input-line__input"
-                    />
-                    <label
-                      for="2000"
-                      class="input-line__label device-context-element js-gtm-event"
-                      data-event="switcher"
-                      >2000</label
-                    >
-                  </div>
-                  <div class="input-line__item">
-                    <input
-                      type="radio"
-                      name="minutes"
-                      id="3000"
-                      class="input-line__input"
-                    />
-                    <label
-                      for="3000"
-                      class="input-line__label device-context-element js-gtm-event"
-                      data-event="switcher"
-                      >3000</label
-                    >
-                  </div>
-                  <div class="input-line__item">
-                    <div
-                      class="input-line__range input-line__range_max"
-                      data-maxdiscount="4000"
-                    >
-                      max
-                    </div>
-                    <input
-                      type="radio"
-                      name="minutes"
-                      id="4000"
-                      class="input-line__input"
-                      disabled="true"
-                    />
-                    <label
-                      for="4000"
-                      class="input-line__label device-context-element js-gtm-event"
-                      data-event="switcher"
-                      >4000</label
-                    >
-                  </div> -->
-                </div>
+                <div class="calc-grid__line input-line"></div>
               </div>
             </form>
             <div class="calc-grid__image-block">
@@ -486,6 +379,7 @@
                 href="https://q.tele2.ru/minutes-management"
                 class="js-gtm-event btn btn-primary price__button device-context-element"
                 data-event="conv_minutes"
+                target="_blank"
                 >Обменять минуты</a
               >
             </div>
@@ -516,6 +410,7 @@
                     href="https://q.tele2.ru/mixx-maxx"
                     class="btn btn--black js-gtm-event"
                     data-event="conv_get-mixx"
+                    target="_blank"
                   >
                     <span class="btn__text">Подключить</span>
                     <svg
@@ -529,7 +424,7 @@
                   </a>
                 </div>
               </div>
-              <div class="box-pic wow fadeInRight" data-wow-delay=".2s">
+              <div class="box-pic wow fadeInRight">
                 <div class="pic-layer pic-layer_mixx1">
                   <picture class="picture"
                     ><img src="./img/page/mixx1.png" alt=""
@@ -547,6 +442,7 @@
                     href="https://q.tele2.ru/stock-exchange"
                     class="btn btn--black js-gtm-event"
                     data-event="conv_more-minutes"
+                    target="_blank"
                   >
                     <span class="btn__text">Докупить минуты</span>
                     <svg
@@ -560,7 +456,7 @@
                   </a>
                 </div>
               </div>
-              <div class="box-pic wow fadeIn" data-wow-delay=".6s">
+              <div class="box-pic wow fadeIn">
                 <div class="pic-layer pic-layer_coin1">
                   <picture class="picture"
                     ><img src="./img/page/coin.png" alt=""
@@ -844,7 +740,7 @@
               <div class="app-links">
                 <a
                   class="app-links__item app-store-link js-gtm-event"
-                  data-event="app-store-link"
+                  data-event="app-download"
                   data-section="section-app"
                   href="https://redirect.appmetrica.yandex.com/serve/388563671611160636?utm_medium=app_link&utm_campaign=allforminutes"
                 >
@@ -856,7 +752,7 @@
                 </a>
                 <a
                   class="app-links__item playmarket-link js-gtm-event"
-                  data-event="playmarket-link"
+                  data-event="app-download"
                   data-section="section-app"
                   href="https://redirect.appmetrica.yandex.com/serve/388563671611160636?utm_medium=app_link&utm_campaign=allforminutes"
                 >
@@ -868,7 +764,7 @@
                 </a>
                 <a
                   class="app-links__item app-gallery-link js-gtm-event"
-                  data-event="app-gallery-link"
+                  data-event="app-download"
                   data-section="section-app"
                   href="https://redirect.appmetrica.yandex.com/serve/388563671611160636?utm_medium=app_link&utm_campaign=allforminutes"
                 >

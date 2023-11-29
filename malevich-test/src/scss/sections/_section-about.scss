@@ -23,7 +23,6 @@
       line-height: 2.2rem;
       margin: 0;
       text-align: left;
-      text-transform: uppercase;
     }
 
     &__text {
@@ -70,9 +69,8 @@
     .section-layer {
       margin-top: 6.1rem;
       margin-bottom: 1.2rem;
-
       max-width: 88%;
-      padding: 1.2rem 5.7rem;
+      padding: 1.2rem 5.7rem 2.2rem 5.7rem;
     }
     .box-content {
       &__title {
