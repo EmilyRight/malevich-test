@@ -17,7 +17,9 @@ class Calculator {
     [this.activeDevice] = devicesData;
     this.inputView = new RangeView(this.activeDevice);
     this.activeItem = [...this.devices].find((device) => this.activeDevice.id === +device.id);
-    this.currentDiscount = this.activeDevice.maxDiscount;
+    this.currentDiscount = this.activeDevice.defaultDiscount
+      ? this.activeDevice.defaultDiscount
+      : this.activeDevice.maxDiscount;
     this.basePrice = this.activeDevice.basePrice;
     this.currentPrice = this.basePrice - this.currentDiscount;
     this.showActiveDevice(this.activeDevice);

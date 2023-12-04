@@ -1,14 +1,37 @@
 .teaser {
   position: relative;
   z-index: 5;
-  // background-color: $color-dark;
+  //background-color:$color-dark;
+  //&:before{@extend %ab;background: rgba(0,0,0,.15);left:0;right: 0;top:0;bottom:0;z-index:1;content:'';display:block}
+
+  .video-layer {
+    overflow: hidden;
+    video {
+      position: relative;
+      margin: 0;
+      display: block;
+      object-fit: cover;
+      min-height: 64rem;
+      max-height: 100vh;
+      height: 82vh;
+    }
+  }
+  .bg-layer {
+    svg,
+    img {
+      display: block;
+    }
+    svg {
+      height: 100%;
+    }
+  }
+
+  //ios saving mode fix
   .platform_ios & {
     .video-layer {
-      background-image: url("../video/fallback-ios@2x.jpg");
+      //background: url("../video/fallback-ios@2x.jpg") no-repeat;
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-
+      background-position: 50% 0;
       video {
         opacity: 0;
         transition: opacity 0.2s linear;
@@ -19,168 +42,271 @@
     }
   }
 
-  .video-layer {
-    overflow: hidden;
-    background-image: url("../img/page/Tizer_Mobile_767Х260_@1x.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    // max-height: 60vh;
-    // min-height: 56rem;
-    // max-width: 100%;
-    min-height: 40rem;
-    height: 50vw;
+  .top-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  .teaser-heading {
+  .logo {
+    width: 8.8rem;
+    display: block;
+    &.logo--white {
+      filter: invert(100);
+    }
+    svg,
+    img {
+      max-width: 100%;
+      display: block;
+      width: 100%;
+    }
+    //@media (max-width: 1156px) {width: 5.8rem;}
+    @media (max-width: 600px) {
+      width: 6.4rem;
+    }
+  }
+
+  &-heading {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     z-index: 2;
-    padding-top: 1.8rem;
+    padding-top: 3.6rem;
     transform: translateY(0);
   }
-  .container {
-  }
-  .logo {
-    width: auto;
-    display: block;
-    max-width: 6.4rem;
-    img {
-      max-width: 100%;
-      display: block;
-    }
-  }
-
-  .teaser-body {
-    margin-top: -6.7rem;
-    bottom: -13rem;
-    &__text {
-      padding: 1.8rem;
-      color: #fff;
-      background: #000;
-      box-shadow: none;
-      position: relative;
-    }
-  }
-  .bigtext {
-    font-family: $fontStencil;
-    text-transform: uppercase;
-    font-size: 4rem;
-    line-height: 4rem;
-    margin-bottom: 1.8rem;
-  }
-  .subtext {
-    @include text-main;
-  }
-
-  .teaser-more {
-    display: block;
-    color: #fff;
-    font: bold 1.6rem $font1;
-    background: none;
-    border: none;
-    padding: 0;
-    text-transform: uppercase;
+  &-body {
     position: absolute;
-    top: calc(50% - 1.5rem);
-    transform: rotate(-90deg);
-    right: 0rem;
-    span {
-      display: none;
-    }
-  }
+    left: 0;
+    right: 0;
+    bottom: 6%;
+    z-index: 2;
+    margin-bottom: -1px; //fix adjusted size display
+    &__text {
+      padding-bottom: 6.3rem;
+      width: 78rem;
+      max-width: 100%;
+      color: #000; //text-shadow: 0 0 .8em rgba(0,0,0,.3);
 
-  .icon-field-opener {
-    display: block;
-    margin: 0;
-    width: 3rem;
-    height: 3rem;
-  }
-
-  @media (min-width: 600px) {
-    .video-layer {
-      overflow: hidden;
-      height: 50rem;
-    }
-    .teaser-heading {
-      padding-top: 2.2rem;
-    }
-    .logo {
-      width: auto;
-      display: block;
-      max-width: 9.4rem;
-      img {
+      .bigtext {
+        font: 400 5.4rem/1.22 $fontStencil;
+        text-transform: uppercase;
+        width: 63rem;
         max-width: 100%;
+        margin-bottom: 1.8rem;
+        span.cy {
+          font-family: $font2;
+          font-size: 0.85em;
+          font-weight: 700;
+        }
+      }
+      p {
+        font-size: 2.2rem;
         display: block;
+        margin: 1.5rem 0 3.6rem;
+        font-family: $font1;
       }
-    }
-    .teaser-body {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 2rem;
-      z-index: 2;
-      margin-bottom: -1px; //fix adjusted size display
-      .container {
+      .teaser__buttons {
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+        .btn {
+          margin-bottom: 0;
+        }
+      }
+      .teaser-more {
+        display: inline-block;
+        background: none;
+        border: none;
         padding: 0;
-      }
-      &__text {
-        color: #fff;
-        padding-bottom: 4.3rem;
-        text-shadow: 0 0 0.8em rgba(0, 0, 0, 0.3);
-        background-color: transparent;
-        span {
-          display: block;
+        font: bold 1.8rem $font1;
+        text-transform: uppercase;
+        color: #000; //text-shadow: 0 0 .8em rgba(0,0,0,.3);
+
+        &:hover {
+          opacity: 0.8;
         }
-        .bigtext {
-          font-family: $fontStencil;
-          text-transform: uppercase;
-          width: 55rem;
-          max-width: 100%;
-          line-height: 1.22;
-          font-size: 5.4rem;
-          margin-bottom: 0rem;
-        }
-        .subtext {
-          font-family: $font1;
-        }
-        p {
-          font-size: 2.2rem;
-          display: block;
-          margin: 1.5rem 0 4.6rem;
-        }
-        .teaser-more {
-          display: block;
-          color: #fff;
-          font: bold 1.6rem $font1;
-          background: none;
-          border: none;
-          padding: 0;
-          text-transform: uppercase;
-          position: static;
-          transform: none;
-          display: flex;
-        }
-        .icon-field-opener {
+        &__icon {
           display: inline-block;
           vertical-align: middle;
-          margin-left: 0.5rem;
+          margin-left: 0.4rem;
+          width: 1rem;
+          transform: rotate(90deg);
+          //filter:invert(100);
         }
       }
     }
   }
-  @media (min-width: 1151px) {
-    .video-layer {
-      background-image: url("../img/page/Tizer_Tablet_1151Х400_@1x.jpg");
+
+  //full hd display
+  @media (min-width: 1700px) {
+    .teaser-heading {
+      padding-top: 5.4rem;
+    }
+    .teaser-body {
+      &__text {
+        padding-bottom: 5.4rem;
+        .bigtext {
+          font-size: 6.3rem;
+        }
+      }
+    }
+  }
+  @media (max-width: 1156px) {
+    .teaser-heading {
+      padding-top: 2.7rem;
     }
   }
 
-  @media (min-width: 1240px) {
+  //big smartphone
+  @media (max-width: 960px) {
+    .teaser-body {
+      &__text {
+        .bigtext {
+          line-height: 1.18;
+          font-size: 4.5rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    //&:before,&:after{display:none}
     .video-layer {
-      min-height: 35vw;
-      background-position-y: 0rem;
-      background-image: url("../img/page/Tizer_Desktop_1152Х450_@1x.jpg");
+      max-width: 100%;
+      video {
+        min-height: 32rem; //37.5rem default
+        height: 40rem;
+      }
+    }
+    .bg-layer {
+      min-height: 27rem;
+      height: 78vw;
+      img {
+        display: block;
+        max-height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .teaser-body {
+      bottom: auto;
+      position: relative;
+
+      .container {
+        padding: 2rem 2rem 3.6rem;
+        background: #000;
+      }
+
+      &__text {
+        padding: 0;
+        margin: 0;
+        background: #000;
+        box-shadow: none;
+        position: relative;
+        color: #fff;
+        .bigtext {
+          font-size: 3.1rem;
+          line-height: 3.689rem;
+          margin: 0;
+        }
+        p {
+          margin: 1.8rem 0 0;
+          font-size: 1.6rem;
+        }
+        .btn {
+          color: #fff;
+          border-color: #fff;
+          margin-top: 1.8rem;
+          padding: 1.1rem 1.7rem;
+        }
+        .teaser-more {
+          margin-top: 1.8rem;
+          color: #fff;
+          //position: absolute;right: 0;top:0;width: 100%;height:100%;
+          -webkit-tap-highlight-color: transparent;
+          //&__txt{display: none;}
+          &__icon {
+            margin-left: 1rem;
+            filter: invert(100);
+            //transform: rotate(0);position: absolute;right: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 330px) {
+    .teaser-body {
+      // &__text{ .bigtext{font-size:3rem}}
+    }
+  }
+}
+
+.teaser {
+  .teaser-pics {
+    position: absolute;
+    max-height: 100%;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    .teaser-pic1 {
+      position: absolute;
+      bottom: 0;
+      right: 10%;
+      max-height: 100%;
+      max-width: 100%;
+      //width:61.2rem;
+    }
+    .teaser-pic2 {
+      position: absolute;
+      bottom: 20%;
+      right: 30%;
+      width: 15%;
+      z-index: 10;
+    }
+    .teaser-pic3 {
+      position: absolute;
+      bottom: 20%;
+      right: 5%;
+      width: 15%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    //.logo{filter:invert(100)}
+    .teaser-pics {
+      width: 100%;
+      height: 37rem;
+      .teaser-pic1 {
+        //width: 166%;
+        max-width: none;
+        right: 3%;
+        //transform: scale(-1,1);
+      }
+      .teaser-pic2 {
+        width: 35%;
+        right: auto;
+        left: 10%;
+      }
+      .teaser-pic3 {
+        width: 30%;
+      }
+      .t2logo {
+        svg {
+          width: 15%;
+        }
+      }
+    }
+    .bg-layer {
+      position: relative;
+      svg {
+        position: absolute;
+        bottom: 0;
+        right: -5rem;
+      }
     }
   }
 }
