@@ -1,4 +1,3 @@
-const cameraImg = require('../../img/page/camera-left.png');
 const capsImg = require('../../img/page/caps-left.png');
 const winkImg = require('../../img/page/wink-left.png');
 const smartphone30Img = require('../../img/page/smartphone-left.png');
@@ -57,4 +56,5 @@ const devicesData = [
     link: 'https://tele2.ru/shop/devices/smartphones?sortingType=pop&pageParams=page1&promo=spec9300004',
   },
 ];
+
 export default devicesData;

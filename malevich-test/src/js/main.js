@@ -3,7 +3,6 @@ import detectDevice from './components/detectDevice';
 
 import GTMEvents from './components/gtmEvents';
 import Calculator from './components/Calc';
-import videoTeaser from './components/videoTeaser';
 
 const GTM = new GTMEvents();
 const calculator = new Calculator();
@@ -12,7 +11,6 @@ const calculator = new Calculator();
 window.addEventListener('load', () => {
   detectDevice();
   getCurrentYear();
-  videoTeaser();
   new WOW().init();
   calculator.addEventListeners();
   GTM.addEventListeners();
