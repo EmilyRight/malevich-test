@@ -1,36 +1,17 @@
 .teaser {
   position: relative;
   z-index: 5;
-  // background-color: $color-dark;
-  .platform_ios & {
-    .video-layer {
-      background-image: url("../video/fallback-ios@2x.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-
-      video {
-        opacity: 0;
-        transition: opacity 0.2s linear;
-        &.is_started {
-          opacity: 1;
-        }
-      }
-    }
-  }
 
   .video-layer {
     overflow: hidden;
-    background-image: url("../img/page/Tizer_Mobile_767Х260_@1x.jpg");
+    background-image: url("../img/page/teaser-mobile.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    // max-height: 60vh;
-    // min-height: 56rem;
-    // max-width: 100%;
     min-height: 40rem;
     height: 50vw;
   }
+
   .teaser-heading {
     position: absolute;
     left: 0;
@@ -40,8 +21,7 @@
     padding-top: 1.8rem;
     transform: translateY(0);
   }
-  .container {
-  }
+
   .logo {
     width: auto;
     display: block;
@@ -70,6 +50,7 @@
     line-height: 4rem;
     margin-bottom: 1.8rem;
   }
+
   .subtext {
     @include text-main;
   }
@@ -172,7 +153,7 @@
   }
   @media (min-width: 1151px) {
     .video-layer {
-      background-image: url("../img/page/Tizer_Tablet_1151Х400_@1x.jpg");
+      background-image: url("../img/page/teaser-tablet.jpg");
     }
   }
 
@@ -180,7 +161,7 @@
     .video-layer {
       min-height: 35vw;
       background-position-y: 0rem;
-      background-image: url("../img/page/Tizer_Desktop_1152Х450_@1x.jpg");
+      background-image: url("../img/page/teaser-desktop.jpg");
     }
   }
 }
