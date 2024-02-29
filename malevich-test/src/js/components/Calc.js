@@ -82,7 +82,9 @@ class Calculator {
     this.activeDevice = devicesData.find((device) => device.id === Number(item.id));
     this.setActiveListItem();
     this.inputView = new RangeView(this.activeDevice);
-    this.currentDiscount = this.activeDevice.maxDiscount;
+    this.currentDiscount = this.activeDevice.defaultDiscount
+      ? this.activeDevice.defaultDiscount
+      : this.activeDevice.maxDiscount;
   }
 
   handleDiscountChoice(event) {
