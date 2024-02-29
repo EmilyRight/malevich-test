@@ -16,7 +16,7 @@ const devicesData = [
     imageSrc: smartphoneRedmi,
     discountsArray: [500, 1000, 1500, 2000],
     maxDiscount: 2000,
-    defaultDiscount: 1000,
+    defaultDiscount: 1500,
     basePrice: 20990,
     eventContext: 'redmi',
     link: 'https://tele2.ru/shop/devices/smartphones?sortingType=pop&pageParams=page1&promo=spec9300004',
