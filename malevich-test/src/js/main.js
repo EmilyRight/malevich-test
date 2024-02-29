@@ -8,7 +8,7 @@ const GTM = new GTMEvents();
 const calculator = new Calculator();
 
 /// /////// DocReady //////////
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   detectDevice();
   getCurrentYear();
   new WOW().init();

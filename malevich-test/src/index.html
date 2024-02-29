@@ -109,6 +109,21 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent" />
     <meta name="theme-color" content="#1f2229" />
+    <script type="module">
+      mindbox =
+        window.mindbox ||
+        function () {
+          mindbox.queue.push(arguments);
+        };
+      mindbox.queue = mindbox.queue || [];
+      mindbox("create", {
+        firebaseMessagingSenderId: "529417637009",
+        serviceWorkerPath: "/src/mindbox-services-worker.js",
+        serviceWorkerScope: "/src/",
+      });
+      mindbox("webpush.create");
+    </script>
+    <script src="https://api.mindbox.ru/scripts/v1/tracker.js" async></script>
   </head>
   <body>
     <script>
@@ -126,6 +141,21 @@
         );
       }
     </script>
+    <script>
+      mindbox =
+        window.mindbox ||
+        function () {
+          mindbox.queue.push(arguments);
+        };
+      mindbox.queue = mindbox.queue || [];
+      mindbox("create", {
+        firebaseMessagingSenderId: "529417637009",
+        serviceWorkerPath: "/src/mindbox-services-worker.js",
+        serviceWorkerScope: "/src/",
+      });
+      mindbox("webpush.create");
+    </script>
+    <script src="https://api.mindbox.ru/scripts/v1/tracker.js" async></script>
     <div class="svgs">
       <svg xmlns="http://www.w3.org/2000/svg">
         <g id="page-logo">
@@ -293,41 +323,33 @@
         <div class="section-layer">
           <div class="slider">
             <ul class="calc__devices-list devices slider_inner">
-              <li
-                class="devices__item devices-item device"
-                data-discount="4000"
-                id="5">
+              <li class="devices__item devices-item device" id="4">
                 <div class="devices-item__image">
-                  <img src="./img/page/smartphone30i.png" alt="" />
+                  <img src="./img/page/1.png" alt="" />
                 </div>
 
-                <div class="devices-item__name">Infinix NOTE 30i 8/256Gb</div>
-              </li>
-              <li
-                class="devices__item devices-item device"
-                data-discount="4000"
-                id="1">
-                <div class="devices-item__image">
-                  <img src="./img/page/smartphone.png" alt="" />
+                <div class="devices-item__name">
+                  Infinix NOTE 30 Pro 8/256Gb
                 </div>
-                <div class="devices-item__name">Infinix HOT 30 8/128Gb</div>
               </li>
-              <li
-                class="devices__item devices-item device"
-                data-discount="1000"
-                id="2">
+              <li class="devices__item devices-item device" id="1">
                 <div class="devices-item__image">
-                  <img src="./img/page/caps.png" alt="" />
+                  <img src="./img/page/2.png" alt="" />
+                </div>
+                <div class="devices-item__name">
+                  Xiaomi Redmi Note 12S 8/256Gb
+                </div>
+              </li>
+              <li class="devices__item devices-item device" id="2">
+                <div class="devices-item__image">
+                  <img src="./img/page/3.png" alt="" />
                 </div>
                 <div class="devices-item__name">Капсула мини</div>
               </li>
 
-              <li
-                class="devices__item devices-item device"
-                data-discount="2000"
-                id="3">
+              <li class="devices__item devices-item device" id="3">
                 <div class="devices-item__image">
-                  <img src="./img/page/wink-left.png" alt="" />
+                  <img src="./img/page/4.png" alt="" />
                 </div>
 
                 <div class="devices-item__name">TV-приставка Wink+</div>
@@ -335,7 +357,7 @@
 
               <a
                 class="devices__item devices-item devices__item_last"
-                href="https://tele2.ru/shop/devices/smartphones?sortingType=pop&pageParams=page1&promo=spec9300004"
+                href="https://tele2.ru/shop/devices/smartphones?sortingType=pop&pageParams=page1&promoCampaign=1400013+1400014+1400015+1400011+1400012+1400003+1400005+1400006+1400007+2000002+1400008+2000003"
                 target="_blank">
                 <div class="devices-item__image box-pic">
                   <div class="pic-layer pic-layer__phone">
@@ -393,7 +415,7 @@
               >
             </div>
             <a
-              href=""
+              href="https://tele2.ru/shop/devices/smartphones?sortingType=pop&pageParams=page1&promoCampaign=1400013+1400014+1400015+1400011+1400012+1400003+1400005+1400006+1400007+2000002+1400008+2000003"
               class="calc-grid__link link js-gtm-event device-context-element"
               data-event="conv_eshop"
               target="_blank"
@@ -552,7 +574,7 @@
                     class="item__title subtitle js-gtm-event"
                     data-event="faq_new-exchange-phones"
                     data-section="section-faq">
-                    Я&nbsp;хочу скидку больше 1500&nbsp;тысяч, как
+                    Я&nbsp;хочу скидку больше 1500&nbsp;рублей, как
                     ее&nbsp;получить?
                   </div>
                   <div class="item__close-icon">
@@ -592,6 +614,15 @@
                     Важно: каждому номиналу скидки соответствует свой перечень
                     устройств (смартфонов или гаджетов), к&nbsp;которому
                     он&nbsp;может быть применен.
+                  </p>
+                  <p class="small-text">
+                    Актуальную точную стоимость устройства уточняйте в&nbsp;<a
+                      href="https://tele2.ru/shop/devices/smartphones"
+                      class="link js-gtm-event"
+                      target="_blank"
+                      data-event="link_catalog"
+                      >каталоге Tele2</a
+                    >.
                   </p>
                 </div>
               </div>
