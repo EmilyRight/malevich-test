@@ -10,14 +10,16 @@ class Calculator {
     this.currentPriceHtml = document.querySelector('.price__new-price');
     this.activeDeviceImage = document.querySelector('.calc-grid__image');
     this.activeDeviceName = document.querySelector('.calc-grid__name');
-    this.activeDeviceLink = document.querySelector('.calc-grid__link');
+    this.activeDeviceLink = document.querySelector('.device-context-element');
     this.contextElements = null;
     this.labels = null;
     this.inputs = null;
     [this.activeDevice] = devicesData;
     this.inputView = new RangeView(this.activeDevice);
     this.activeItem = [...this.devices].find((device) => this.activeDevice.id === +device.id);
-    this.currentDiscount = this.activeDevice.maxDiscount;
+    this.currentDiscount = this.activeDevice.defaultDiscount
+      ? this.activeDevice.defaultDiscount
+      : this.activeDevice.maxDiscount;
     this.basePrice = this.activeDevice.basePrice;
     this.currentPrice = this.basePrice - this.currentDiscount;
     this.showActiveDevice(this.activeDevice);
@@ -80,7 +82,9 @@ class Calculator {
     this.activeDevice = devicesData.find((device) => device.id === Number(item.id));
     this.setActiveListItem();
     this.inputView = new RangeView(this.activeDevice);
-    this.currentDiscount = this.activeDevice.maxDiscount;
+    this.currentDiscount = this.activeDevice.defaultDiscount
+      ? this.activeDevice.defaultDiscount
+      : this.activeDevice.maxDiscount;
   }
 
   handleDiscountChoice(event) {
@@ -96,6 +100,9 @@ class Calculator {
     const {
       name, imageSrc, type,
     } = this.activeDevice;
+    console.log('====================================');
+    console.log(this.activeDeviceLink);
+    console.log('====================================');
     this.activeDeviceImage.src = imageSrc;
     this.activeDeviceName.innerHTML = name;
 

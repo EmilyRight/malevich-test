@@ -6,7 +6,7 @@
  * @prop {string} imageSrc
  * @prop {number[]} discountsArray
  * @prop {number} maxDiscount
- * @prop {number} averageDiscount
+ * @prop {number} [defaultDiscount]
  * @prop {number} basePrice
  * @prop {string} eventContext
  * @prop {string} link

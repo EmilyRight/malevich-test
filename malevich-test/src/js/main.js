@@ -1,18 +1,16 @@
-import $ from 'jquery';
 import { WOW } from './vendor/wow.min';
 import detectDevice from './components/detectDevice';
 
 import GTMEvents from './components/gtmEvents';
 import Calculator from './components/Calc';
-import videoTeaser from './components/videoTeaser';
 
 const GTM = new GTMEvents();
 const calculator = new Calculator();
-window.jQuery = window.$ = $;
+
 /// /////// DocReady //////////
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   detectDevice();
-  videoTeaser();
+  getCurrentYear();
   new WOW().init();
   calculator.addEventListeners();
   GTM.addEventListeners();
@@ -80,5 +78,12 @@ function handleFaqOpening() {
         item.classList.add(activeClassName);
       }
     });
+  });
+}
+
+function getCurrentYear() {
+  const yearSpan = document.querySelectorAll('.current-year');
+  yearSpan.forEach((span) => {
+    span.innerHTML = new Date().getFullYear().toString();
   });
 }

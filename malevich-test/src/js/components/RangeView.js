@@ -1,3 +1,4 @@
+/* eslint-disable no-bitwise */
 /* eslint-disable no-return-assign */
 /* eslint-disable no-nested-ternary */
 import { html } from './SafeHtml';
@@ -10,7 +11,9 @@ class RangeView {
     this.device = deviceObject;
     this.inputs = null;
     this.inputsBar = this.createInputBarBackground();
-    this.currentDiscount = this.device.maxDiscount;
+    this.currentDiscount = this.device.type === 'smartphone'
+      ? this.device.defaultDiscount
+      : this.device.maxDiscount;
     this.renderInputLine();
     this.inputsBg = '';
   }
@@ -27,16 +30,28 @@ class RangeView {
   }
 
   removeColorFromInput() {
+    const classNames = ['in-range', 'in-range_pink'];
     this.inputs.forEach((input) => {
-      if (input.classList.contains('in-range')) {
-        input.classList.remove('in-range');
-      }
+      classNames.forEach((className) => {
+        if (input.classList.contains(className)) {
+          input.classList.remove(className);
+        }
+      });
     });
   }
 
   setColorOnInputs() {
     this.inputs.forEach((input) => {
-      if (Number(input.id) <= this.currentDiscount) {
+      if (this.device.type === 'smartphone') {
+        if (Number(input.id) <= this.device.defaultDiscount
+        & Number(input.id) <= this.currentDiscount) {
+          input.classList.add('in-range');
+        } else
+        if (Number(input.id) > this.device.defaultDiscount
+        & Number(input.id) <= this.currentDiscount) {
+          input.classList.add('in-range_pink');
+        }
+      } else if (Number(input.id) <= this.currentDiscount) {
         input.classList.add('in-range');
       }
     });
@@ -51,7 +66,16 @@ class RangeView {
   addLineGradient() {
     const currentDiscountIndex = this.device.discountsArray.indexOf(this.currentDiscount);
     const { length } = this.device.discountsArray;
-    this.inputsBg.style.backgroundImage = `linear-gradient(to right, #3fcbff ${(100 / (length - 1)) * currentDiscountIndex}%, #d3d9df ${(100 / (length - 1)) * currentDiscountIndex}%)`;
+    const { defaultDiscount } = this.device;
+    const defaultDiscountIndex = this.device.discountsArray.indexOf(this.device.defaultDiscount);
+    const blueGradientPercent = (100 / (length - 1)) * currentDiscountIndex;
+    const pinkGradientPercent = (100 / (length - 1)) * defaultDiscountIndex;
+
+    if (defaultDiscount && this.currentDiscount > defaultDiscount) {
+      this.inputsBg.style.backgroundImage = `linear-gradient(to right, #3fcbff ${pinkGradientPercent}%, #EF2CA0 ${pinkGradientPercent + 8}%, #EF2CA0 ${blueGradientPercent}%, #d3d9df ${blueGradientPercent}%)`;
+    } else {
+      this.inputsBg.style.backgroundImage = `linear-gradient(to right, #3fcbff ${blueGradientPercent}%, #d3d9df ${blueGradientPercent}%)`;
+    }
   }
 
   handleColorOnInputBar() {
@@ -61,8 +85,7 @@ class RangeView {
   }
 
   renderInputLine() {
-    const { discountsArray } = this.device;
-
+    const { discountsArray, defaultDiscount } = this.device;
     return html`
     ${this.inputsBar}
     <div class="calc-grid__line input-line">
@@ -78,19 +101,21 @@ class RangeView {
             id="${discount}"
             class="input-line__input
             ${discount <= this.currentDiscount ? 'in-range' : ''}"
-            ${discount === this.device.maxDiscount ? 'checked=true' : ''}
-          >
+            ${discount === this.currentDiscount ? 'checked=true' : ''}/>
           <label for="${discount}"
             class="input-line__label device-context-element js-gtm-event"
             data-event="switcher"
           >
               ${discount}
           </label>
-        </div>
-        `;
-  })}
-      </div>
+          ${defaultDiscount && discount > defaultDiscount
+    ? html`<div class="input-line__popup">С&nbsp;подпиской MiXX скидка больше</div>`
+    : ''
+}
+        </div >
       `;
+  })}
+  </div>`;
   }
 }
 

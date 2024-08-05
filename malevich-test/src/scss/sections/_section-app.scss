@@ -1,40 +1,57 @@
-.section--app {
-  background: $color-extralight2;
-  .section-layer {
-    padding-top: 9.9rem;
+.section-app {
+  .container {
+    padding-top: 2.4rem;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding-bottom: 6rem;
+    padding-bottom: 0;
     gap: 21%;
+    padding-left: 0;
+    padding-right: 0;
   }
-  .box-content {
-    flex: 64% 1 0;
-    max-width: 50%;
+  .container__app {
+    max-width: calc(100% - 2 * 1.2rem);
+    padding: 1.2rem 1.2rem 0 1.2rem;
+    background-color: #00bfff;
+    margin: 0 auto;
+    border-radius: 1.6rem;
+    @media (min-width: $mobile-small) {
+      max-width: none;
+      width: 100%;
+      border-radius: 3.2rem;
+      padding: 2.4rem 2.4rem 0 2.4rem;
+      display: flex;
+    }
+  }
+  .app {
     &__title {
-      margin-bottom: 4.5rem;
-      font-family: $font1;
-      font-size: 3.8rem;
+      margin-bottom: 0.8rem;
+      font-family: $font2;
+      color: #fff;
     }
     &__text {
-      font-size: 2.2rem;
-      line-height: 1.37;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
       font-family: $font1;
+      color: #fff;
+      margin-bottom: 1.6rem;
       p {
-        &:first-child {
-          margin-bottom: 3rem;
-        }
-        &:last-child {
-          width: 80%;
-        }
+        color: #fff;
+        margin-bottom: 0.6rem;
       }
     }
   }
   .box-pic {
-    position: relative;
     width: 16vw;
-    min-width: 20rem;
+    min-width: 33rem;
+    margin: 0 auto;
+    @media (min-width: $mobile-small) {
+      width: 9vw;
+      max-width: 27.5rem;
+      min-width: auto;
+      margin: 0 auto;
+    }
     picture {
       display: block;
       margin: 0 auto;
@@ -46,164 +63,57 @@
       width: 100%;
     }
   }
-  .box-app {
-    flex: 100% 0 0;
-  }
 }
-.box-content__list {
-  font-size: 2.2rem;
-  line-height: 1.36;
+.app__list {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
   padding: 0;
   margin: 0;
-  padding-bottom: 2rem;
 }
-
+.list__item {
+  margin-bottom: 0.5rem;
+}
+.qr-code {
+  width: 10rem;
+  height: 10rem;
+  margin-right: 3.6rem;
+  padding: 0.8rem;
+  background-color: #fff;
+  border-radius: 1.2rem;
+  position: absolute;
+  display: none;
+  @media (min-width: $mobile-small) {
+    display: block;
+    right: auto;
+    left: 2.4rem;
+    bottom: 2.4rem;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+  }
+}
 .box-app {
   text-align: center;
 
-  &__title {
-    font-size: 2.2rem;
-    display: none;
-    margin-bottom: 1.8rem;
-  }
   &__links {
     margin-bottom: 1.8rem;
   }
-  .qr-code {
-    width: 12rem;
-    height: 12rem;
-    margin-right: 3.6rem;
-    padding: 0.4rem;
-    position: absolute;
-    bottom: 7rem;
-    right: 29%;
-    img {
-      display: block;
-      max-width: 100%;
-      width: 100%;
-    }
-  }
+
   .app-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    @media (min-width: $mobile-small) {
+      display: none;
+    }
     img {
-      height: 4.8rem;
       display: block;
       margin: 0 auto;
-    }
-    &__item {
-      display: none;
-    }
-  }
-}
-
-// @media (max-width: 766px) {
-//   .section--app {
-//     .section-layer {
-//       padding: 4.6rem 1.8rem 3.6rem;
-//     }
-//     .box-content {
-//       &__title {
-//         margin-bottom: 1.8rem;
-//         text-align: center;
-//       }
-//       &__text {
-//         font-size: 1.9rem;
-//         p {
-//           &:first-child {
-//             margin-bottom: 2.4rem;
-//           }
-//         }
-//       }
-//     }
-//     .box-pic {
-//       justify-content: center;
-//       margin-left: 0;
-//       top: -30%;
-//       picture {
-//         width: 30vw;
-//         max-width: 100%;
-//       }
-//       img {
-//         width: 100%;
-//         display: block;
-//       }
-//     }
-//   }
-// }
-
-@media (max-width: 600px) {
-  .section--app {
-    .section-layer {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      padding-top: 4.6rem;
-      padding-bottom: 3.6rem;
-    }
-    .box-content {
       max-width: 100%;
-      &__title {
-        text-align: center;
-        margin-bottom: 1.8rem;
-        font-size: 2.8rem;
-        line-height: 3.4rem;
-      }
-      &__text {
-        font-size: 1.9rem;
-        line-height: 2.6rem;
-        p {
-          &:first-child {
-            margin-bottom: 2.4rem;
-          }
-          &:last-child {
-            width: 100%;
-          }
-        }
-      }
-    }
-    .box-pic {
-      justify-content: center;
-      width: 100%;
-      margin-left: 0;
-      top: -2rem;
-      picture {
-        width: 100%;
-        max-width: 75%;
-        margin-bottom: 5%;
-      }
-      img {
-        width: 100%;
-        display: block;
-      }
-    }
-    .box-app__title {
-      display: block;
-      font-family: $font1;
-    }
-
-    .box-app .qr-code {
-      display: none;
-    }
-
-    .app-links {
-      img {
-        height: 4.8rem;
-        display: block;
-        margin: 0 auto;
-      }
-      .platform_ios & .app-store-link {
-        display: block;
-      }
-      .platform_android & .playmarket-link {
-        display: block;
-      }
-
-      .platform_huawei & .app-gallery-link {
-        display: block;
-      }
-
-      // .platform_unknown & {
-      //   display: inline-block;
-      // }
     }
   }
 }
+
+

@@ -15,26 +15,27 @@
 
 $base-font-size: 1.6rem;
 $base-line-height: 1.375;
-$base-font-family: "tele2_sans", sans-serif;
+$base-font-family: "rooftop", sans-serif;
 $base-min-width: 320px;
 $icoPath: "../img/icons";
-$fontPath: "../fonts";
+$fontPath: "../fonts2";
 
 ////Breakpoints
+$mobile-small: 600px;
 $mobile: 767px;
 $tablet: 992px;
 $retina: 1.5; // mobile retina
 $retina-hd: 2.5;
 
 ////FONTS
-$font1: "tele2_sans";
-$font1b: "tele2_sans";
-$font2: "tele2_serif";
-$font2b: "tele2_serif";
-$font3: "tele2_short";
-$fontStencil: "stencil";
+$font1: "rooftop";
+$font2: "halvar";
+$fontStencil: "halvar";
 
 ////Colors
+$color-brand-default: #a7fc00; //#74C800
+$color-brand-active: #b7fb56;
+
 $color-white: #ffffff;
 $color-extralight: #f9f9fa;
 $color-extralight2: #f5f5fa;
@@ -46,6 +47,7 @@ $color-gray0: #7a7a7a;
 $color-gray: #626469;
 $color-gray2: #36393f;
 $color-dark: #1f2229;
+$color-deep-dark: #101216;
 $color-black: #000000;
 
 $color-yellow: #d7ff38;

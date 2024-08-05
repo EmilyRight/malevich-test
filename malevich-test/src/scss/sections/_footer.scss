@@ -3,22 +3,25 @@
   .section-layer {
     max-height: 9.2rem;
     padding: 2.4rem 1.8rem;
-
     display: block;
     .box-content {
       width: 100%;
       max-width: 100%;
       text-align: center;
       color: $color-gray0;
-      font-size: 1.6rem;
-      line-height: 1.38;
       font-family: $font1;
-    }
 
+    }
+    .copyrights, .rules {
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.2rem;
+    }
     .rules {
       .text-link {
         text-decoration: underline;
         color: $color-gray0;
+        font-weight: 500;
         &:hover {
           text-decoration: none;
         }

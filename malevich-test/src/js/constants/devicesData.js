@@ -1,73 +1,66 @@
-const cameraImg = require('../../img/page/camera-left.png');
-const capsImg = require('../../img/page/caps-left.png');
-const winkImg = require('../../img/page/wink-left.png');
-const smartphone30Img = require('../../img/page/smartphone-left.png');
-const smartphone30iImg = require('../../img/page/smartphone30i-left.png');
+// const capsImg = require('../../img/page/caps-left.png');
+// const winkImg = require('../../img/page/wink-left.png');
+// const smartphone30Img = require('../../img/page/smartphone-left.png');
+// const smartphone30iImg = require('../../img/page/smartphone30i-left.png');
+
+const capsImg = require('../../img/page/3-left.png');
+const winkImg = require('../../img/page/4-left.png');
+const smartphoneRedmi = require('../../img/page/xiaomi-left.png');
+const smartphoneInfinix = require('../../img/page/infinix-left.png');
+
+const smartphonesLink = 'https://msk.tele2.ru/shop/devices/smartphones?promoCampaign=1400013+1400014+1400015+1400011+1400012+1400003+1400005+1400006+1400007+2000002+1400008+2500002&sortingType=pop&pageParams=page1';
+const devicesLink = 'https://msk.tele2.ru/shop/devices/gadgets?promoCampaign=1400013+1400014+1400015+1400011+1400012+1400003+1400005+1400006+1400007+2000002+1400008+2500002&sortingType=pop&pageParams=page1';
 
 const devicesData = [
   {
     id: 1,
     type: 'smartphone',
-    name: 'Infinix HOT 30 8/128Gb',
-    imageSrc: smartphone30Img,
-    discountsArray: [500, 750, 1000, 2000, 3000, 4000],
+    name: 'Infinix NOTE 30 Pro 8/256Gb',
+    imageSrc: smartphoneInfinix,
+    discountsArray: [500, 1000, 1500, 2000, 3000, 4000],
     maxDiscount: 4000,
-    averageDiscount: 2000,
-    basePrice: 17990,
-    eventContext: 'hot',
-    link: 'https://tele2.ru/shop/devices/smartphones?promo=9300004',
+    defaultDiscount: 3000,
+    basePrice: 21990,
+    eventContext: 'note',
+    link: smartphonesLink,
   },
-
   {
     id: 2,
-    type: 'device',
-    name: 'VK&nbsp;Капсула мини с&nbsp;Марусей',
-    imageSrc: capsImg,
-    discountsArray: [500, 750, 1000],
-    maxDiscount: 1000,
-    averageDiscount: 750,
-    basePrice: 6990,
-    eventContext: 'capsule',
-    link: 'https://tele2.ru/shop/devices/gadgets?sortingType=pop',
+    type: 'smartphone',
+    name: 'Xiaomi Redmi Note 13 8/256Gb',
+    imageSrc: smartphoneRedmi,
+    discountsArray: [500, 1000, 1500, 2000],
+    maxDiscount: 2000,
+    defaultDiscount: 2000,
+    basePrice: 20990,
+    eventContext: 'redmi',
+    link: smartphonesLink,
   },
 
   {
     id: 3,
     type: 'device',
-    name: 'TV-приставка Wink+',
-    imageSrc: winkImg,
-    discountsArray: [500, 750, 1000, 1500, 2000],
-    maxDiscount: 2000,
-    averageDiscount: 1000,
-    basePrice: 6990,
-    eventContext: 'wink',
-    link: 'https://tele2.ru/shop/devices/gadgets?sortingType=pop',
+    name: 'VK&nbsp;Капсула мини с&nbsp;Марусей',
+    imageSrc: capsImg,
+    discountsArray: [500, 750, 1000],
+    maxDiscount: 1000,
+    basePrice: 6950,
+    eventContext: 'capsule',
+    link: devicesLink,
   },
 
   {
     id: 4,
     type: 'device',
-    name: 'Видеокамера Ростелеком',
-    imageSrc: cameraImg,
-    discountsArray: [500, 750, 1000],
-    maxDiscount: 1000,
-    averageDiscount: 750,
-    basePrice: 4000,
-    eventContext: 'rostelecom',
-    link: 'https://tele2.ru/shop/devices/gadgets?sortingType=pop',
+    name: 'TV-приставка Wink+',
+    imageSrc: winkImg,
+    discountsArray: [500, 750, 1000, 1500, 2000],
+    maxDiscount: 2000,
+    basePrice: 5900,
+    eventContext: 'wink',
+    link: devicesLink,
   },
 
-  {
-    id: 5,
-    type: 'smartphone',
-    name: 'Infinix NOTE 30i 8/256',
-    imageSrc: smartphone30iImg,
-    discountsArray: [500, 750, 1000, 2000, 3000, 4000],
-    maxDiscount: 4000,
-    averageDiscount: 2000,
-    basePrice: 21990,
-    eventContext: 'note',
-    link: 'https://tele2.ru/shop/devices/smartphones?promo=9300004',
-  },
 ];
+
 export default devicesData;
