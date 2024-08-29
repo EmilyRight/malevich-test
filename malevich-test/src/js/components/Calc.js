@@ -37,6 +37,7 @@ class Calculator {
     this.listenToDiscountChoice();
   }
 
+  // eslint-disable-next-line class-methods-use-this
   removeActiveDevice(device) {
     if (device.classList.contains('active')) {
       device.classList.remove('active');
@@ -100,9 +101,6 @@ class Calculator {
     const {
       name, imageSrc, type,
     } = this.activeDevice;
-    console.log('====================================');
-    console.log(this.activeDeviceLink);
-    console.log('====================================');
     this.activeDeviceImage.src = imageSrc;
     this.activeDeviceName.innerHTML = name;
 

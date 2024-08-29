@@ -116,4 +116,29 @@
   }
 }
 
+.platform_ios {
+  .playmarket-link {
+    display: none;
+  }
+  .app-store-link {
+    display: block;
+  }
+}
 
+.platform_android {
+  .playmarket-link {
+    display: block;
+  }
+  .app-store-link {
+    display: none;
+  }
+}
+
+.platform_unknown {
+  .playmarket-link {
+    display: block;
+  }
+  .app-store-link {
+    display: block;
+  }
+}
