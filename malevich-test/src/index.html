@@ -37,26 +37,10 @@
       href="./fonts2/T2HalvarStencilBreit-ExtraBoldMidGap.woff"
       crossorigin="anonymous" />
 
-    <!-- GTM -->
-    <script>
-      dataLayer = [{ pageType: "Main", userId: "24487464" }];
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        let f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-54B5LLV");
-    </script>
-
     <!-- CSS -->
     <link rel="stylesheet" href="./css/main.css" media="all" />
 
     <!-- OG -->
-
     <meta
       name="description"
       content="В t2 минуты сохраняются навсегда! Меняйте минуты на скидку на смартфоны, умные колонки, камеры, тв-приставку Wink, часы и другие гаджеты" />
@@ -97,24 +81,9 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent" />
     <meta name="theme-color" content="#1f2229" />
-    <script type="module">
-      mindbox =
-        window.mindbox ||
-        function () {
-          mindbox.queue.push(arguments);
-        };
-      mindbox.queue = mindbox.queue || [];
-      mindbox("create", {
-        firebaseMessagingSenderId: "529417637009",
-        serviceWorkerPath: "/src/mindbox-services-worker.js",
-        serviceWorkerScope: "/src/",
-      });
-      mindbox("webpush.create");
-    </script>
-    <script src="https://api.mindbox.ru/scripts/v1/tracker.js" async></script>
   </head>
   <body>
-    <script>
+    <!-- <script>
       if (!window.UXS) {
         document.addEventListener(
           "uxsReady",
@@ -128,22 +97,8 @@
           })(window, document, "https://cdn.uxfeedback.ru/widget.js")
         );
       }
-    </script>
-    <script>
-      mindbox =
-        window.mindbox ||
-        function () {
-          mindbox.queue.push(arguments);
-        };
-      mindbox.queue = mindbox.queue || [];
-      mindbox("create", {
-        firebaseMessagingSenderId: "529417637009",
-        serviceWorkerPath: "/src/mindbox-services-worker.js",
-        serviceWorkerScope: "/src/",
-      });
-      mindbox("webpush.create");
-    </script>
-    <script src="https://api.mindbox.ru/scripts/v1/tracker.js" async></script>
+    </script> -->
+
     <div class="svgs">
       <svg xmlns="http://www.w3.org/2000/svg">
         <g id="page-logo">
@@ -187,7 +142,6 @@
             fill="currentColor" />
         </g>
         <g id="teaser-bg">
-          <!--style="mix-blend-mode: multiply"-->
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
@@ -208,16 +162,7 @@
         <section class="teaser dark-bg">
           <div class="container">
             <div class="teaser__content teaser-content">
-              <div class="teaser-content__image">
-                <!-- <picture>
-                  <source
-                    srcset="./img/page/teaser-desktop.png"
-                    media="(min-width: 600px)" />
-                  <img
-                    src="./img/page/teaser-mob.png"
-                    alt="Абстрактное изображение" />
-                </picture> -->
-              </div>
+              <div class="teaser-content__image"></div>
               <div
                 class="content__body teaser-body js-go-next"
                 data-event="button_more">
@@ -754,6 +699,20 @@
     </div>
 
     <script type="module" src="./js/main.js?v1" defer></script>
-    <!--<script type="text/javascript" src="./js/gtm-events.js" defer></script>-->
+
+    <!-- GTM -->
+    <script>
+      dataLayer = [{ pageType: "Main", userId: "24487464" }];
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        let f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-54B5LLV");
+    </script>
   </body>
 </html>
