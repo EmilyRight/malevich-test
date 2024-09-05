@@ -55,12 +55,12 @@ class Calculator {
 
   showDevicePrices() {
     const { basePrice } = this.activeDevice;
+    const { currentPrice } = this;
     const basePriceArray = basePrice.toString().split('');
     basePriceArray.splice(-3, 0, ' ');
-
     const currentPriceArray = (basePrice - this.currentDiscount).toString().split('');
     currentPriceArray.splice(-3, 0, ' ');
-    this.basePriceHtml.innerHTML = `${basePriceArray.join('')}&nbsp;₽`;
+    this.basePriceHtml.innerHTML = `${basePrice === currentPrice ? '' : `${basePriceArray.join('')}&nbsp;₽`}`;
     this.currentPriceHtml.innerHTML = `${currentPriceArray.join('')}&nbsp;₽`;
   }
 
@@ -83,15 +83,18 @@ class Calculator {
     this.activeDevice = devicesData.find((device) => device.id === Number(item.id));
     this.setActiveListItem();
     this.inputView = new RangeView(this.activeDevice);
+    this.basePrice = this.activeDevice.basePrice;
     this.currentDiscount = this.activeDevice.defaultDiscount
       ? this.activeDevice.defaultDiscount
       : this.activeDevice.maxDiscount;
+    this.currentPrice = this.basePrice - this.currentDiscount;
   }
 
   handleDiscountChoice(event) {
     const discount = Number(event.target.htmlFor);
     if (discount <= this.activeDevice.maxDiscount) {
       this.currentDiscount = discount;
+      this.currentPrice = this.basePrice - this.currentDiscount;
       this.inputView.setCurrentDiscount(this.currentDiscount);
       this.inputView.handleColorOnInputBar();
     }
