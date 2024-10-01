@@ -124,11 +124,11 @@ const devicesData = [
       },
       {
         minutes: 1500,
-        gb: 60,
+        gb: 90,
       },
       {
         minutes: 2000,
-        gb: 60,
+        gb: 120,
       }],
     maxDiscount: 2000,
     basePrice: 5900,
