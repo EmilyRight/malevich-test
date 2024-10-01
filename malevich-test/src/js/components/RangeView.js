@@ -16,6 +16,7 @@ class RangeView {
       : this.device.maxDiscount;
     this.renderInputLine();
     this.inputsBg = '';
+    this.offsetWidth = document.body.offsetWidth;
   }
 
   /**
@@ -76,7 +77,6 @@ class RangeView {
 
     const { length } = this.device.discountsArray;
 
-
     const defaultDiscountIndex = this.device.discountsArray.indexOf(defaultDiscountObj);
     const blueGradientPercent = (100 / (length - 1)) * currentDiscountIndex;
     const pinkGradientPercent = (100 / (length - 1)) * defaultDiscountIndex;
@@ -111,7 +111,7 @@ class RangeView {
             class="input-line__label device-context-element js-gtm-event"
             data-event="switcher"
           >
-              ${discount.minutes} мин<br>или ${discount.gb} ГБ
+              ${discount.minutes} мин<br>или <span class="blue-text">${discount.gb} ГБ</span>
           </label>
           ${defaultDiscount && discount.minutes > defaultDiscount
     ? html`<div class="input-line__popup">С&nbsp;подпиской MiXX скидка больше</div>`
