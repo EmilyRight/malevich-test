@@ -184,8 +184,8 @@
       display: flex;
       justify-content: space-between;
       @media (min-width: $mobile-small) {
-        width: 106%;
-        left: -2.5%;
+        width: 110%;
+        left: -4.5%;
       }
     }
 
@@ -372,7 +372,7 @@
         background-color: #d3d9df;
         border-radius: 50%;
         position: absolute;
-        top: -5.5%;
+        top: -4.5%;
         left: 50%;
         transform: translateX(-50%);
         transition: 0.4s;
@@ -388,7 +388,7 @@
           content: "";
           width: 1.4rem;
           height: 1.4rem;
-          top: -5.9%;
+          top: -3%;
         }
       }
     }
