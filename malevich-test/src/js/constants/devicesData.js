@@ -45,7 +45,7 @@ const devicesData = [
       }],
     maxDiscount: 3000,
     defaultDiscount: 1500,
-    basePrice: 21990,
+    basePrice: 28990,
     eventContext: 'note',
     link: smartphonesLink,
   },
