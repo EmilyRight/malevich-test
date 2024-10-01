@@ -64,10 +64,20 @@ class RangeView {
   }
 
   addLineGradient() {
-    const currentDiscountIndex = this.device.discountsArray.indexOf(this.currentDiscount);
-    const { length } = this.device.discountsArray;
     const { defaultDiscount } = this.device;
-    const defaultDiscountIndex = this.device.discountsArray.indexOf(this.device.defaultDiscount);
+    console.log(defaultDiscount);
+    const [currentDiscountObj] = this.device.discountsArray
+      .filter((el) => el.minutes === this.currentDiscount);
+    const [defaultDiscountObj] = this.device.discountsArray
+      .filter((el) => el.minutes === defaultDiscount);
+    console.log(this.device.discountsArray);
+
+    const currentDiscountIndex = this.device.discountsArray.indexOf(currentDiscountObj);
+
+    const { length } = this.device.discountsArray;
+
+
+    const defaultDiscountIndex = this.device.discountsArray.indexOf(defaultDiscountObj);
     const blueGradientPercent = (100 / (length - 1)) * currentDiscountIndex;
     const pinkGradientPercent = (100 / (length - 1)) * defaultDiscountIndex;
 
@@ -89,32 +99,26 @@ class RangeView {
     return html`
     ${this.inputsBar}
     <div class="calc-grid__line input-line">
-      ${discountsArray.map((discount, index) => {
-    let discountValue = '';
-    if (index === 0) discountValue = 'min';
-    if (index === discountsArray.length - 1) discountValue = 'max';
-    return html`
+      ${discountsArray.map((discount) => html`
         <div class="input-line__item">
-          <div class="input-line__range input-line__range_max">${discountValue}</div>
           <input type="radio"
             name="minutes"
-            id="${discount}"
-            class="input-line__input
-            ${discount <= this.currentDiscount ? 'in-range' : ''}"
-            ${discount === this.currentDiscount ? 'checked=true' : ''}/>
-          <label for="${discount}"
+            id="${discount.minutes}"
+            class="input-line__input ${discount.minutes <= this.currentDiscount ? 'in-range' : ''}"
+
+            ${discount.minutes === this.currentDiscount ? 'checked=true' : ''}>
+          <label for="${discount.minutes}"
             class="input-line__label device-context-element js-gtm-event"
             data-event="switcher"
           >
-              ${discount}
+              ${discount.minutes} мин<br>или ${discount.gb} ГБ
           </label>
-          ${defaultDiscount && discount > defaultDiscount
+          ${defaultDiscount && discount.minutes > defaultDiscount
     ? html`<div class="input-line__popup">С&nbsp;подпиской MiXX скидка больше</div>`
     : ''
 }
         </div >
-      `;
-  })}
+      `)}
   </div>`;
   }
 }
