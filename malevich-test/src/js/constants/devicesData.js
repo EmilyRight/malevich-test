@@ -52,7 +52,7 @@ const devicesData = [
   {
     id: 2,
     type: 'smartphone',
-    name: 'Xiaomi Redmi 12 4/128Gb',
+    name: 'Xiaomi Redmi 13 6/128Gb',
     imageSrc: smartphone2,
     discountsArray: [
       {
@@ -74,7 +74,7 @@ const devicesData = [
     ],
     maxDiscount: 2000,
     defaultDiscount: 1500,
-    basePrice: 12990,
+    basePrice: 15490,
     eventContext: 'redmi',
     link: smartphonesLink,
   },
